@@ -84,6 +84,9 @@ const SignIn = () => {
                         {...field}
                       />
                     </FormControl>
+                    <div className="text-xs text-blue-800">
+                      <Link to="/auth/forgot-password">Forgot Password?</Link>
+                    </div>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -99,7 +102,9 @@ const SignIn = () => {
             <div className="w-full">
               <p className="text-sm text-muted-foreground text-center">
                 Don&apos;t have an account?
-                <Link to="/auth/signup">Sign up</Link>
+                <Link to="/auth/signup" className="text-blue-800">
+                  Sign up
+                </Link>
               </p>
             </div>
           </CardFooter>

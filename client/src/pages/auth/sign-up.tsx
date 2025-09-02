@@ -45,7 +45,7 @@ const SignUp = () => {
         <CardHeader className="text-center mb-2">
           <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
           <CardDescription className="text-muted-foreground text-sm">
-            Create an account to continue
+            Fill in your details to create your new account
           </CardDescription>
         </CardHeader>
 
@@ -55,6 +55,19 @@ const SignUp = () => {
               onSubmit={form.handleSubmit(handleOnSubmit)}
               className="space-y-6"
             >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Full Name</FormLabel>
+                    <FormControl>
+                      <Input type="text" placeholder="john Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="email"
@@ -90,6 +103,23 @@ const SignUp = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Confirm Password</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder="*****************"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
               <Button type="submit" size={"sm"} className="w-full">
                 Sign up
@@ -97,11 +127,13 @@ const SignUp = () => {
             </form>
           </Form>
 
-          <CardFooter className="mt-4">
+          <CardFooter className="mt-6">
             <div className="w-full">
               <p className="text-sm text-muted-foreground text-center">
-                already have an account?
-                <Link to="/auth/signin">Sign in</Link>
+                Already have an account?
+                <Link to="/auth/signin" className="text-blue-800">
+                  Sign in
+                </Link>
               </p>
             </div>
           </CardFooter>
