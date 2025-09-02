@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center gap-4">
-      <Link to="/sign-in">
+      <Link to="/auth/signin">
         <Button size={"sm"} className="bg-blue-500 text-white">
           Login
         </Button>
       </Link>
-      <Link to="/sign-up">
+      <Link to="/auth/signup">
         <Button
           size={"sm"}
           variant={"outline"}
